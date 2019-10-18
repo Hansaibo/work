@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,div,ul,li{margin: 0;padding: 0;}
+			ul{list-style: none;}
+			body{font: 12px/20px arial;background: #000;text-align: center;}
+			#box{position:relative;width:492px;height:172px;margin: 10px auto;background: #fff;border: 8px solid #fff;
+			border-radius: 5px;cursor:pointer;}
+			#box .list{position:relative;width: 490px;height: 170px;overflow: hidden;}
+			#box .list ul{position: absolute;left: 0;top: 0;}
+			#box .list ul li{width: 490px;height: 170px;overflow: hidden;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="list">
+				<ul>
+					<li><img src="img/01.jpg" width="490" height="170"/></li>
+					<li><img src="img/02.jpg" width="490" height="170"/></li>
+					<li><img src="img/03.jpg" width="490" height="170"/></li>
+					<li><img src="img/04.jpg" width="490" height="170"/></li>
+					<li><img src="img/05.jpg" width="490" height="170"/></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	// 获取ID
+	var $ = function(id){
+		return typeof id == "string" ? document.getElementById(id) : id
+	};
+	
+	// 获取 tagName
+	var $$ = function(tagName,oParent) {
+		return (oParent || document).getElementsByTagName(tagName)
+	};
+	
+	// 自动播放对象
+	var AutoPlay = function(id){
+		this.initialize(id);	
+	};
+	
+	AutoPlay.prototype = {
+		initialize: function(id){
+			var oThis = this;	
+			this.oBox = $(id);
+			this.oUl = $$("ul",this.oBox)[0];
+			this.aImg = $$("img",this.oBox);
+			this.timer = null;
+			this.autoTimer = null;
+			this.iNow = 0;
+	        this.creatBtn();
+	        this.aBtn = $$("li",this.oCount);
+			
+		},
+	   
+	    creatBtn: function(){
+	    	this.oCount = document.createElement("ul");
+	    	this.oFrag = document.createDocumentFragment();
+	    	this.oCount.className = "count";
+	    	for(i = 0; i < this.aImg.length; i++){
+	    		var oLi = document.createElement("li");
+	    		oLi.innerHTML = i + 1;
+	    		this.oFrag.appendChild(oLi);
+	    	}
+	    	 this.oCount.appendChild(this.oFrag);
+	    	 this.oBox.appendChild(this.oCount);
+	    },
+	    toggle: function(){
+	    	for(var i = 0; i < this.aBtn.length; i++){
+	    		this.aBtn[i].className = "";
+	    	}
+	    	  
+	    }
+	 
+	};
+	
+	window.onload = function(){
+		new AutoPlay("box");
+	}
+</script>

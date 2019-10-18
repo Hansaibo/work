@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<center><button>0</button></center>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	window.onload = function(){
+			var oBtn = document.getElementsByTagName("button")[0];
+			var n = 0;
+		    oBtn.onclick = function(){
+		    	this.innerHTML = ++n;
+		    	alert(this.innerHTML);
+		}
+  }
+</script>

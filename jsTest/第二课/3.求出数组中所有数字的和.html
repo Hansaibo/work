@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#app{
+				width: 500px;
+				margin: 0 auto;
+			}
+			input{
+				width: 220px;
+				height: 20px;
+			}
+			label{
+			  margin-left: 5px;
+			  font-size: 12px;
+			  color: gray;
+			}
+			button{
+				margin-top: 15px;
+			}
+			p{
+				font-size: 20px;
+				font-weight: 600;
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" name="" id="ipt" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" /><label>输入数字求和,数字之间用半角","号分隔</label><br>
+		    <button id="btn">求和</button>
+		    <p></p>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var ipt = document.getElementById("ipt");
+	var btn = document.getElementById("btn");
+	var p = document.getElementsByTagName("p")[0];
+	ipt.onkeyup = function(){
+		this.value = this.value.replace(/[^(\d)|(,)]/,"");
+	};
+	 btn.onclick = function(){
+	 	var sum=0;
+	 	var arr = document.getElementsByTagName("input")[0].value.split(",");
+	     for(var i in arr){
+	     	sum+= parseInt(arr[i]);
+	     };
+	     p.innerHTML = sum;
+	 };
+</script>

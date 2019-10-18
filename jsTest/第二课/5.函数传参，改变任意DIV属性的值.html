@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,p,div{padding: 0;margin: 0;}
+			body{color: #333;font:12px/1.5 tahoma;padding-top: 10px;}
+			#outer{width:300px;margin: 0 auto;}
+			p{margin-bottom: 10px;}
+			label{width: 5em;display: inline-block;text-align: right;}
+			button{margin-right: 5px;}
+			input{padding:3px;border:1px solid gainsboro;font-family: inherit;}
+			#center{width:180px;height: 180px;background: #000000;color: white;padding: 10px;margin: 0 auto;}
+		</style>
+	</head>
+	<body>
+		<div id="outer">
+			<p><label>属性名：</label><input type="text" value="background"/></p>
+			<p><label>属性值：</label><input type="text" value="blue"/></p>
+			<p><label></label><button>确定</button><button>重置</button></p>
+			<div id="center">在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+    var changeStyle = function(elem,name,value){
+		     elem.style[name] = value;
+	  };
+	var oBtn = document.getElementsByTagName("button");
+	var oIpt = document.getElementsByTagName("input");
+	var oDiv = document.getElementById("center");
+	window.onload = function(){
+		oBtn[0].onclick = function(){
+			changeStyle(oDiv,oIpt[0].value,oIpt[1].value);
+		};
+		oBtn[1].onclick = function(){
+			oDiv.removeAttribute("style");
+		};
+	};
+</script>

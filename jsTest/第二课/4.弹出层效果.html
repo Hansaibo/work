@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{height: 100%;overflow: hidden;}
+			body,div,h2{padding: 0;margin: 0;}
+			body{font:12px/1.5 Tahoma;}
+		    center{margin-top: 10px;}
+		    button{cursor: pointer;}
+		   /* filter:是ie的滤镜属性
+			alpha：滤镜
+			opacity：是透明度 范围0 - 100
+			100就是完全透明了*/
+		    #mask{position: absolute;left: 0;top:0;right: 0;bottom: 0;opacity: .5;filter:alpha(opacity=50);background: black;display: none;}
+		    #win{position: absolute;left: 50%;top:50%;height: 200px;width: 400px;border: 4px solid #f90;background: #fff;
+		    margin:-102px 0 0 -202px;display: none;}
+		    h2{border-bottom: 3px solid #f90;text-align: right;font-size: 12px;background: #fc0;padding:5px;}
+		    h2 span{color:#f90;border:1px solid #f90;background: #fff;padding:0 2px;cursor: pointer;}
+		    
+		</style>
+	</head>
+	<body>
+		<div id="mask"></div>
+		<div id="win"><h2><span id="close">×</span></h2></div>
+		<center><button>弹出层</button></center>
+	</body>
+</html>
+<script type="text/javascript">
+	  var oBtn = document.getElementsByTagName("button")[0];
+	  var oMask = document.getElementById("mask");
+	  var oWin = document.getElementById("win");
+	  var oClose = document.getElementById("close");
+	  window.onload = function(){
+		  	oBtn.onclick = function(){
+		  		  oMask.style.display = "block";
+		  		  oWin.style.display = "block";
+		  	};
+		  	oClose.onclick = function(){
+		  		  oMask.style.display = "none";
+		  		  oWin.style.display = "none";
+		  	};
+	  };
+</script>
