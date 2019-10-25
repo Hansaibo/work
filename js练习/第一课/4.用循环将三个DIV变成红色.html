@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#app{
+				width: 330px;
+				margin: auto;
+			}
+			p{
+				text-align: center;
+			}
+			button{
+				border:#111111 1px solid;
+			}
+			.red{
+				width: 100px;
+				height:100px;
+				background: black;
+				float: left;	
+				margin: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p><button>点击将DIV变成红色</button></p>
+			<div class="red"></div>
+			<div class="red"></div>
+			<div class="red"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var red = document.getElementsByClassName("red");
+	var btn = document.getElementsByTagName('button')[0];
+	     function Color(color){
+	     	for(var i = 0; i < red.length; i++){
+	     		red[i].style.background = color;
+	     	};
+	     };
+	       btn.onmouseover = function(){
+	       	  this.style.background = 'yellow';
+	       };
+	         btn.onmouseout = function(){
+	       	  this.style.background = '';
+	       };
+	         btn.onclick = function(){
+	         	
+	         	Color("red");
+	         };
+</script>

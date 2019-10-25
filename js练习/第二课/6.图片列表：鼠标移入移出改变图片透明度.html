@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片列表：鼠标移入/移出改变图片透明度</title>
+		<style type="text/css">
+			body,div,img{padding: 0;margin: 0;}
+			body{margin-top:10px ;}
+			#app{width:700px;margin: 0 auto;border: 1px solid #000000;text-align: center;padding: 5px;}
+			img{border:1px solid gray;margin: 3px;opacity: 0.3;cursor: crosshair;}
+			.current{opacity: 1;}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<img src="image/1.jpg" />
+			<img src="image/2.jpg" />
+			<img src="image/3.jpg" />
+			<img src="image/4.jpg" />
+			<img src="image/5.jpg" />
+			<img src="image/6.jpg" />
+			<img src="image/7.jpg" />
+			<img src="image/8.jpg" />
+			<img src="image/9.jpg" />
+			<img src="image/10.jpg" />
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oImg = document.getElementsByTagName("img");
+	
+	for(var i =0; i < oImg.length; i++){
+		oImg[i].onmouseover = function(){
+			this.className = "current";
+		};
+		oImg[i].onmouseout = function(){
+			this.className = "";
+		}
+	}
+</script>

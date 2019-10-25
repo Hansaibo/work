@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#app{
+				width: 140px;
+				height: 200px;
+				margin: auto;
+				
+				text-align: center;
+			}
+			input{
+				margin:10px 0;
+				width: 140px;
+			}
+			button{
+				border:#111111 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" name="" id="one" value="北京市" /><br>
+			<input type="text" id="two" value="朝阳区"/><br>
+			<button id="btn">传参</button>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	  function $(id){
+	  	return document.getElementById(id);
+	  };
+	   $('btn').onclick = function(){
+	   	    alert($("one").value);
+	   	    alert($("two").value);
+	   }
+</script>

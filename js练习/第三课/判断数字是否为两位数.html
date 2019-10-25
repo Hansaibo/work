@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{font:12px/1.5 tahoma;text-align: center;}
+			.int{width: 50px;margin-right: 10px;border:1px solid #ccc;padding:3px;background: #f0f0f0;}
+		</style>
+	</head>
+	<body>
+		<input class="int" type="text" /><input type="button" value="是否为两位数" />
+	</body>
+</html>
+<script type="text/javascript">
+	window.onload = function(){
+		
+		var oInput = document.getElementsByTagName("input");
+		
+		oInput[0].onkeyup = function(){
+			this.value = this.value.replace(/[^\d]/, "");
+		};
+		oInput[1].onclick = function(){
+		       (oInput[0].value == "")?
+		       alert("请输入数字！") :
+		       alert(/^\d{2}$/.test(parseInt(oInput[0].value))? "√ 是两位数" : "这是" +oInput[0].value.length+ "位数");
+		}
+	};
+</script>

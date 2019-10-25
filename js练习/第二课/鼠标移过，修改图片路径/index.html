@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul,li{margin: 0;padding:0;}
+			ul{list-style:none;}
+			body{background: #000000;}
+		    img{border:0;border-radius: 3px;}
+		    #box{width: 212px;margin: 10px auto;background: #fff;overflow: hidden;border:5px solid #fff;border-radius: 3px;padding: 0 0 3px 3px;}
+			#box li,#box li img{float: left;width:50px;height: 50px;cursor: pointer;}
+			#box li{margin: 3px 3px 0 0;}
+			#box li .first{position: relative;}
+			#box li.first,#box li.first img{width:156px;height: 156px;}
+		</style>
+	</head>
+	<body>
+			<ul id="box">
+				<li class="first"><img src="big_1.jpg" /></li>
+				<li><img src="small_1.jpg"/></li>
+				<li><img src="small_2.jpg"/></li>
+				<li><img src="small_3.jpg"/></li>
+				<li><img src="small_4.jpg"/></li>
+				<li><img src="small_5.jpg"/></li>
+				<li><img src="small_6.jpg"/></li>
+				<li><img src="small_7.jpg"/></li>
+				<li><img src="small_8.jpg"/></li>
+				<li><img src="small_9.jpg"/></li>
+				<li><img src="small_10.jpg"/></li>
+				<li><img src="small_11.jpg"/></li>
+			</ul>
+			
+	</body>
+</html>
+<script type="text/javascript">
+	window.onload = function(){
+		var oImg = document.getElementsByTagName("img");
+		for(var i = 0; i < oImg.length; i++){
+			oImg[i].onmouseover = function(){
+				var img  = new Image();
+				img.src = oImg[0].src = this.src.replace(/small/,"big");
+			}
+		};
+	};
+	
+</script>
